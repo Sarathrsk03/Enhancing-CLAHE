@@ -26,19 +26,19 @@ def processing_pipeline(input_image):
     denoiseSharp_hist = plot_histogram(denoiseSharp_image)
 
     # Calculate SNR, CNR, and PSNR for each image
-    snr_original = calculate_snr(input_image, input_image - input_image)
+    snr_original = "Cannot Calculate"
     snr_clahe = calculate_snr(clahe_image, input_image - clahe_image)
     snr_sharpened = calculate_snr(sharpened_image, input_image - sharpened_image)
     snr_denoised = calculate_snr(denoised_image, input_image - denoised_image)
     snr_denoiseSharp = calculate_snr(denoiseSharp_image,input_image - denoiseSharp_image)
 
-    cnr_original = calculate_cnr(input_image, input_image - input_image)
+    cnr_original = "Cannot Calculate"
     cnr_clahe = calculate_cnr(clahe_image, input_image - clahe_image)
     cnr_sharpened = calculate_cnr(sharpened_image, input_image - sharpened_image)
     cnr_denoised = calculate_cnr(denoised_image, input_image - denoised_image)
     cnr_denoiseSharp = calculate_cnr(denoiseSharp_image,input_image - denoiseSharp_image)
 
-    psnr_original = calculate_psnr(input_image, input_image)
+    psnr_original = "Cannot Calculate"
     psnr_clahe = calculate_psnr(clahe_image, input_image)
     psnr_sharpened = calculate_psnr(sharpened_image, input_image)
     psnr_denoised = calculate_psnr(denoised_image, input_image)
