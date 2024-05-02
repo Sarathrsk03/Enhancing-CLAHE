@@ -68,7 +68,7 @@ def clahe(img, clip_limit=2.0, tile_size=(8, 8)):
     return cv2.cvtColor(limg, cv2.COLOR_LAB2BGR)
 
 def sharpen(image, sharpen_strength=1.0):
-    # Apply sharpening using unsharp masking
+    # Applies Gausian blur to the image to create a smoothed version and then subtracts the blurred version to enhance the edges, -> sharpened image
     blurred = cv2.GaussianBlur(image, (0, 0), 3)
     sharpened = cv2.addWeighted(image, 1.0 + sharpen_strength, blurred, -sharpen_strength, 0)
     return sharpened
